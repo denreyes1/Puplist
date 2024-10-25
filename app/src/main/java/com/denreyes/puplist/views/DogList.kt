@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -81,12 +82,24 @@ fun DogListItem(dog: Dog) {
                     .height(200.dp),
                 contentScale = ContentScale.FillWidth
             )
-//            FlowRow(
-//                modifier = Modifier
-//                    .padding(start = 6.dp, end = 6.dp)
-//            ) {
-//                repeat()
-//            }
+            FlowRow(
+                modifier = Modifier
+                    .padding(start = 6.dp, end = 6.dp)
+            ) {
+                if (dog.breeds?.isNotEmpty()!!) {
+                    val temperaments = dog.breeds[0].temperament.split(", ")
+                    for (temperament in temperaments) {
+                        SuggestionChip(
+                            modifier = Modifier
+                                .padding(start = 3.dp, end = 3.dp),
+                            onClick = { },
+                            label = {
+                                Text(text = temperament)
+                            }
+                        )
+                    }
+                }
+            }
         }
     }
 }

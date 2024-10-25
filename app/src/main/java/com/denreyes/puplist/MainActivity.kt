@@ -20,6 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.denreyes.puplist.ui.theme.PuplistTheme
 import com.denreyes.puplist.views.DogList
 
+val API_KEY = "live_rxR1supp7CKDMaiCRIPTJHqWumeVwEJ3Z5sdGqicYWtt3ioRUwVtXsGiXATaxQAs"
+
 class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3Api::class)
@@ -31,7 +33,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         TopAppBar(title = {
-                            Text(text = "Pets")
+                            Text(text = "Puplist")
                         },
                             colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
                         )
