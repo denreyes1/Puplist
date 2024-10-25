@@ -1,5 +1,5 @@
 package com.denreyes.puplist.data
 
-interface PetsRepository {
+interface DogsRepository {
     suspend fun getDogs(): NetworkResult<List<Dog>>
 }

@@ -5,8 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Dog(
-    @SerialName("id")
     val id: String,
-    @SerialName("url")
-    val image: String
+    val url: String
 )
